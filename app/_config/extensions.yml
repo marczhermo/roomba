@@ -1,0 +1,12 @@
+---
+Name: myextensions
+After:
+  - '#userformsconfig'
+---
+SilverStripe\UserForms\Model\Submission\SubmittedForm:
+  extensions:
+    - SubmittedFormExtension
+
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\UserForms\Control\UserDefinedFormController:
+    class: MyUserFormController
