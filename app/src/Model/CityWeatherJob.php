@@ -55,6 +55,10 @@ class CityWeatherJob extends DataObject
             $this->ExecuteInterval = $this->config()->get('defaultInterval');
         }
 
+        if (!$this->ExecuteEvery) {
+            $this->ExecuteEvery = $this->config()->get('defaultPeriod');
+        }
+
         // Intentionally put below for extensions to read during their own onBeforeWrite
         parent::onBeforeWrite();
     }
