@@ -16,13 +16,13 @@ class CityAdmin extends ModelAdmin
     private static string $menu_icon_class = 'font-icon-checklist';
 
     private static array $managed_models = [
-        CityWeatherJob::class => [
-            'dataClass' => CityWeatherJob::class,
-            'title' => 'Weather'
-        ],
         City::class => [
             'dataClass' => City::class,
-            'title' => 'City'
+            'title' => '🏙️ City'
+        ],
+        CityWeatherJob::class => [
+            'dataClass' => CityWeatherJob::class,
+            'title' => '🌅 Weather Job'
         ],
     ];
 
