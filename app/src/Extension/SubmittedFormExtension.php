@@ -1,8 +1,8 @@
 <?php
 
-use SilverStripe\Dev\Debug;
+namespace App\Extension;
+
 use SilverStripe\ORM\DataExtension;
-use SilverStripe\UserForms\Model\EditableFormField\EditableFileField;
 
 class SubmittedFormExtension extends DataExtension
 {

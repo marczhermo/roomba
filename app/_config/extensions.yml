@@ -5,8 +5,8 @@ After:
 ---
 SilverStripe\UserForms\Model\Submission\SubmittedForm:
   extensions:
-    - SubmittedFormExtension
+    - App\Extension\SubmittedFormExtension
 
 SilverStripe\Core\Injector\Injector:
   SilverStripe\UserForms\Control\UserDefinedFormController:
-    class: MyUserFormController
+    class: App\Control\MyUserFormController

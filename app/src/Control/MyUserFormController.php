@@ -1,6 +1,9 @@
 <?php
 
+namespace App\Control;
 
+use Exception;
+use Swift_RfcComplianceException;
 use Psr\Log\LoggerInterface;
 use SilverStripe\AssetAdmin\Controller\AssetAdmin;
 use SilverStripe\Assets\File;
