@@ -84,14 +84,23 @@ class CityWeatherJob extends DataObject
     {
         $service = Injector::inst()->create(WeatherService::class);
         $city = $this->City();
-        $data = $service->getData($city->Name, ['1T'=>'']);
-        $city->Weather = $data;
+
+        $weather = $service->getData($city->Name, ['1T'=>'']);
+        $city->Weather = $weather;
+
+        sleep(1); // be kind to 3rd party apis
+
+        $temperature = $service->getData($city->Name, ['format'=>'3']);
+        $city->Temperature = $temperature;
+
+        // City::class
         $city->write();
 
-        $this->Message = $data;
+        // CityWeatherJob::class
+        $this->Message = $weather;
         $this->write();
 
-        Debug::dump($data);
+        Debug::dump($weather);
     }
 
     /**
