@@ -109,13 +109,14 @@ class CityWeatherJob extends DataObject
 
     /**
      * Stops the rescheduling of queue job
+     *
      * @param string $status
      * @param string $message
      *
      * @return $this
      * @throws \SilverStripe\ORM\ValidationException
      */
-    public function stopSchedule($status = 'Stopped', $message = '')
+    public function stopSchedule(string $status = 'Stopped', string $message = '')
     {
         $this->FirstExecution = ''; // onBeforeWrite checks of ScheduledExecutionExtension
         $this->ExecuteEvery = '';   // rescheduling logic of ScheduledExecutionJob
