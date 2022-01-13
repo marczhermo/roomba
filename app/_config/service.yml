@@ -1,0 +1,7 @@
+---
+Name: app_service
+---
+SilverStripe\Core\Injector\Injector:
+  App\Service\WeatherService:
+    constructor:
+      baseURL: '`SS_WEATHER_API_ENDPOINT`'

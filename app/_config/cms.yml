@@ -1,0 +1,6 @@
+---
+Name: app_cms
+---
+SilverStripe\Admin\LeftAndMain:
+  extra_requirements_css:
+    - 'app/cms/dist/cms.css'

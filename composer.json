@@ -5,7 +5,7 @@
     "homepage": "http://silverstripe.org",
     "license": "BSD-3-Clause",
     "require": {
-        "php": "^7.1 || ^8",
+        "php": "^7.4 || ^8",
         "silverstripe/recipe-plugin": "^1.5",
         "silverstripe/recipe-core": "4.8.0@stable",
         "silverstripe/admin": "1.8.0@stable",
@@ -21,7 +21,10 @@
         "symfony/yaml": "^3",
         "symbiote/silverstripe-advancedworkflow": "^5.5",
         "silverstripe-themes/simple": "^3.2",
-        "silverstripe/userforms": "^5.9"
+        "silverstripe/userforms": "^5.9",
+        "symbiote/silverstripe-queuedjobs": "^4.8",
+        "guzzlehttp/guzzle": "^6.5",
+        "ext-curl": "*"
     },
     "require-dev": {
         "sminnee/phpunit": "^5.7",
@@ -39,6 +42,9 @@
             ".htaccess",
             "index.php",
             "web.config"
+        ],
+        "expose": [
+            "app/cms/dist"
         ]
     },
     "config": {
@@ -50,5 +56,15 @@
         }
     },
     "prefer-stable": true,
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": [
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "psr-4": {
+            "App\\": "app/src/",
+            "App\\Tests\\": "app/tests/"
+        }
+    }
 }
